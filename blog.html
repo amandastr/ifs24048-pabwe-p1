@@ -1,59 +1,68 @@
 <!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Dev Blogs</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail</title>
+  </head>
+  <body>
 
-<nav>
-<a href="index.html">IMDb Top 3 Movies</a> | <a href="blog.html">Dev Blogs</a> | <a href="form.html">Form Pendaftaran</a> | <a href="cv.html">Curriculum Vitae</a>
-</nav>
+    <nav>
+      <a href="index.html">IMDb Top 3 Movies</a> |
+      <a href="blog.html">Dev Blogs</a> |
+      <a href="blog-detail.html">Blog Detail</a> |
+      <a href="form.html">Form Pendaftaran</a> |
+      <a href="cv.html">Curriculum Vitae</a>
+    </nav>
 
-<main>
+    <main>
 
-<hr>
+      <hr>
 
-<h1>Dev Blogs</h1>
-<h2>Programming</h2>
-<p>The magic behind computers.</p>
+      <img src="images/Screenshot 2026-09-14 090847.png" width="100%" alt="cover">
 
-<hr>
+      <p><img src="https://placehold.co/32x32" width="32" height="32" alt="Vishnu Satheesh">&nbsp;<span><b>Vishnu Satheesh</b></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Posted on May 31</span></p>
 
-<table border="1" cellpadding="8" cellspacing="0">
-<tr>
-<td><img src="https://placehold.co/32x32" width="32" height="32" alt="aimodels-fyi"></td>
-<td>
-<p><b>aimodels-fyi</b><br><span>Jun 1</span></p>
-<h3><a href="blog-detail.html">A beginner's guide to the Ltx-Video-0.9.7 model by Lightricks on Replicate</a></h3>
-<p><span>#coding</span>&nbsp;&nbsp;<span>#ai</span></p>
-</td>
-</tr>
-</table>
+      <h1>How to Deploy a Web Application Using Docker and NGINX on Your Own Server</h1>
 
-<table border="1" cellpadding="8" cellspacing="0">
-<tr>
-<td><img src="https://placehold.co/32x32" width="32" height="32" alt="Ali nazari"></td>
-<td>
-<p><b>Ali nazari</b><br><span>May 31</span></p>
-<h3><a href="blog-detail.html">Securing Redis with ACLs and Integrating Redis Insight in Docker</a></h3>
-<p><span>#docker</span>&nbsp;&nbsp;<span>#webdev</span></p>
-</td>
-</tr>
-</table>
+      <p><span>#webdev</span>&nbsp;&nbsp;<span>#devops</span></p>
 
-<table border="1" cellpadding="8" cellspacing="0">
-<tr>
-<td><img src="https://placehold.co/32x32" width="32" height="32" alt="Vishnu Satheesh"></td>
-<td>
-<p><b>Vishnu Satheesh</b><br><span>May 31</span></p>
-<h3><a href="blog-detail.html">How to Deploy a Web Application Using Docker and NGINX on Your Own Server</a></h3>
-<p><span>#webdev</span>&nbsp;&nbsp;<span>#devops</span></p>
-</td>
-</tr>
-</table>
+      <hr>
 
-</main>
+      <p>Deploying a web application doesn't need to be a complicated process. With Docker, NGINX, and your own server, you can get your app live in no time.</p>
+      <p>In this blog, I'll walk through how to serve an app with a domain, route traffic through NGINX, and run everything inside a Docker container. This guide is tailored for a Linux-based server.</p>
 
-</body>
+      <h2>Step 1 : Setup docker</h2>
+      <p>First, set up Docker. Any application or codebase can be used as an example. Create a Dockerfile in the project directory to define how the app should be containerized.</p>
+      <p>Dockerfile:</p>
+      <pre>
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+CMD [ "npm", "start" ]
+</pre>
+
+      <h2>Step 2 : Build and Run the Docker Container (on your server)</h2>
+      <p>Once the Dockerfile is ready, the next step is to build the Docker image and run it to make sure everything is working as expected.</p>
+
+      <h2>Conclusion</h2>
+      <p>Deploying a web application using Docker and NGINX on your own server may sound intimidating at first, but once broken down, it is quite manageable.</p>
+      <p>By containerizing the app, setting up NGINX as a reverse proxy, and linking everything together on the VPS, full control over the deployment process is gained.</p>
+
+      <hr>
+
+      <h2>Top comments (0)</h2>
+
+      <p>
+        <img src="https://placehold.co/32x32" width="32" height="32" alt="profile">
+        &nbsp;
+        <label for="comment">Add a comment</label>
+        <textarea id="comment" rows="3" placeholder="Add to the discussion"></textarea>
+      </p>
+
+    </main>
+
+  </body>
 </html>
